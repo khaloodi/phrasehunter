@@ -7,15 +7,16 @@ let start = document.getElementById('btn__reset');
 const keyboard = document.getElementsByClassName('key');
 
 
-for (el of keyboard) {
-    el.addEventListener('click', e => {
-        game.handleInteraction(e.target);
-    })
-}
+
 game = new Game();
 game.startGame();
 
 start.addEventListener('click', () => {
+    for (el of keyboard) {
+        el.addEventListener('click', e => {
+            game.handleInteraction(e.target);
+        })
+    }
     if (document.getElementById('overlay').classList.contains('lose') || document.getElementById('overlay').classList.contains('win')) {
         document.querySelector('#phrase ul').innerHTML = '';
         for (el of keyboard) {
@@ -24,6 +25,7 @@ start.addEventListener('click', () => {
             el.classList.remove('wrong')
             el.classList.remove('chosen')
         }
+        document.getElementById('overlay').className = ''
         const scoreboard = document.querySelector('#scoreboard ol')
         for (li of scoreboard.children) {
             li.firstElementChild.src = "./images/liveHeart.png";
