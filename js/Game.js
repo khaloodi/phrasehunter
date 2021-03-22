@@ -39,11 +39,8 @@ class Game {
      * Begins game by selecting a random phrase and displaying it to the user
      */
     startGame() {
-        const overlay = document.getElementById('overlay');
-        const startGame = document.getElementById('btn__reset');
-        startGame.addEventListener('click', e => {
-            overlay.style.display = 'none';
-        })
+        document.querySelector('div#overlay').style.display = 'none';
+
         this.activePhrase = this.getRandomPhrase()
         this.activePhrase.addPhraseToDisplay()
     }
