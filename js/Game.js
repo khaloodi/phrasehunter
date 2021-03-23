@@ -16,11 +16,11 @@ class Game {
 
     createPhrase() {
         const phrases = [
-            new Phrase('life is like a box of chocolates'),
+            new Phrase('hello world'),
             new Phrase('there is no try only do'),
-            new Phrase('i found you ms new booty'),
+            new Phrase('faster alone further together'),
             new Phrase('are you talking to me'),
-            new Phrase('i fear the man who has practiced one kick ten thousand times')
+            new Phrase('be less wrong')
         ]
         return phrases;
     }
